@@ -2,7 +2,7 @@ from settings import *
 import pygame, random
 
 class Countdown():
-    def _init_(self, seconds):
+    def __init__(self, seconds):
         self.display_surface = pygame.display.get_surface()
         self.font = pygame.font.Font(COUNTDOWN_FONT, 80)
         self.decrement_time = pygame.time.get_ticks()

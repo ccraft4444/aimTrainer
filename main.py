@@ -1,8 +1,12 @@
+import os
+os.environ['SDL_AUDIODRIVER'] = 'dsp'
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+
 from countdown import Countdown
 from settings import *
 import ctypes, pygame, sys
-import os
-os.environ["SDL_VIDEODRIVER"] = "dummy"
+
+
 
 # Maintain resolution regardless of Windows scaling settings
 #ctypes.windll.user32.SetProcessDPIAware()
@@ -39,6 +43,7 @@ class Game:
             self.start_time = pygame.time.get_ticks()
 
             pygame.display.update()
+            self.screen.blit(self.bg_image,(0,0))
             self.clock.tick(FPS)
 
             #game specific updates
